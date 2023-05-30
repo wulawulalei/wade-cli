@@ -1,0 +1,13 @@
+{
+    "name": "wade-cli",
+    "version": "0.0.1",
+    "description": "脚手架搭建",
+    "main": "index.js",
+    "scripts": {
+        "create": "node bin/enter.js"
+    },
+    "bin": "bin/enter",
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}
