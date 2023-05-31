@@ -4,10 +4,20 @@
     "description": "脚手架搭建",
     "main": "index.js",
     "scripts": {
-        "create": "node bin/enter.js"
+        "wade-cli": "node bin/enter.js"
     },
-    "bin": "bin/enter",
+    "bin": {
+        "wc": "bin/enter"
+    },
     "keywords": [],
-    "author": "",
-    "license": "ISC"
+    "author": "xzy",
+    "url": "git@github.com:wulawulalei/wade-cli.git",
+    "license": "ISC",
+    "dependencies": {
+        "chalk": "^4.1.1",
+        "commander": "^10.0.1",
+        "inquirer": "^8.1.5",
+        "ora": "^5.1.0",
+        "readline": "^1.3.0"
+    }
 }
