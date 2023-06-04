@@ -29,8 +29,8 @@ program.command('init')
     .arguments('<app-name>')
     .description('create a new project one-step') // 用来描述命令的一些提示、说明性的语句，我们在使用help命令时会打印出这些相关的描述
     .option('-t, --template [url]', 'assign a url as template')
-    .action((name, { template: url }) => {
-        init(name, url)
+    .action((name, options) => {
+        init(name, options)
     })
 
 program.command('ls')

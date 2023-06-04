@@ -27,6 +27,10 @@ node bin/enter.js ls
 
 ```
 git clone git@github.com:wulawulalei/wade-cli.git
+# 链接到全局
+npm link
+# 如果失败尝试 
+npm link --force
 ```
 
 
@@ -38,3 +42,4 @@ git clone git@github.com:wulawulalei/wade-cli.git
 3. chalk：用于修改输出样式
 4. ora：用于显示loading
 5. readline：用于逐行获取流
+6. spawn：使用子线程去执行命令

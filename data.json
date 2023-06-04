@@ -1,0 +1,16 @@
+{
+    "dfProject": {
+        "vue2": {
+            "url": "https://gitee.com/wulawulalei/eat.git",
+            "branch": "master"
+        },
+        "vue3": {
+            "url": "https://gitee.com/wulawulalei/eat.git",
+            "branch": "master"
+        },
+        "react": {
+            "url": "https://gitee.com/wulawulalei/eat.git",
+            "branch": "master"
+        }
+    }
+}
