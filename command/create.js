@@ -4,6 +4,8 @@ const fs = require('fs')
 
 const path = require('path')
 
+const PackageManager = require('../lib/packageManager')
+
 const remove = require('../lib/remove')
 
 const clearConsole = require('../lib/utils/clear-console')
@@ -37,7 +39,8 @@ async function create(name) {
     }
 
     // 下载文件流程（选择npm还是yarn，是否需要eslint，balel等）
-
+    const pm = new PackageManager()
+    await pm.install(null, cwd)
 }
 
 module.exports = create
