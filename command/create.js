@@ -4,7 +4,13 @@ const fs = require('fs')
 
 const path = require('path')
 
+const Creator = require('../lib/creator')
+
+const PromptManager = require('../lib/promptManager')
+
 const PackageManager = require('../lib/packageManager')
+
+const options = require('../lib/utils/option')
 
 const remove = require('../lib/remove')
 
@@ -39,7 +45,20 @@ async function create(name) {
     }
 
     // 下载文件流程（选择npm还是yarn，是否需要eslint，balel等）
-    const pm = new PackageManager()
+
+    const creator = new Creator()
+    const promptManager = new PromptManager(creator)
+    Object.keys(options).map(opt => {
+        if (opt === 'dfOption') {
+            promptManager.handlerDefault(options[opt])
+        } else {
+            promptManager.handlerFeature(options[opt])
+        }
+    })
+    const answers = await creator.handlerPrompt()
+    clearConsole()
+
+    const pm = new PackageManager(answers)
     await pm.install(null, cwd)
 }
 

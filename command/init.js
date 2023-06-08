@@ -6,6 +6,8 @@ const spawn = require('../lib/spawn')
 
 const inquirer = require('inquirer')
 
+const hasYarn = require('../lib/utils/hasYarn')
+
 const clear = require('../lib/utils/clear-console')
 
 const { dfProject } = require('../data.json')
@@ -29,7 +31,11 @@ function download(name, options) {
             await spawn('git', ['checkout', branch], { cwd })
         }
         await spawn('git', ['init'], { cwd })
-        await spawn('npm', ['install'], { cwd })
+        if (hasYarn(cwd)) {
+            await spawn('yarn', [], { cwd })
+        } else {
+            await spawn('npm', ['install'], { cwd })
+        }
         return resolve(true)
     })
 }
